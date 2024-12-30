@@ -2,16 +2,7 @@ const mainElement = document.querySelector('main');
 const canvaElement = document.querySelector('#canva');
 createCanvas(mainElement,16);
 
-// for (let i = 0; i < 16*16; i++) {
-//     const element = document.createElement("div");
-//     element.classList.add("grid");
-//     mainElement.appendChild(element);
-// }
-
 function createCanvas(parentElement,sizeCanva) {
-    // if (parentElement instanceof HTMLDivElement) {
-    //     throw new TypeError(`The parentElement should be HTMLElement (${parentElement.prototype})`);   
-    // }
     if (typeof sizeCanva !== 'number') {
         throw new TypeError(`The "${sizeCanva}" is not a number (${typeof sizeCanva})`);
     }
@@ -26,6 +17,15 @@ function createCanvas(parentElement,sizeCanva) {
     for (let i = 0; i < sizeCanva*sizeCanva; i++) {
         const element = document.createElement("div");
         element.classList.add("grid");
+        element.addEventListener("mouseenter",()=>{
+            element.classList.remove("transition");
+            element.style.backgroundColor = "black";
+        });
+        element.addEventListener("mouseleave",()=>{
+            element.classList.add("transition");
+            element.style.backgroundColor = "red";
+
+        });
         newTable.appendChild(element);
     }
     
