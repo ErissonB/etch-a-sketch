@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+:root {
+    --duration: 5s;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -19,53 +23,75 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Bangers";
+    color: white;
+    background-color: #ff0000;
 
-    #controls{
-        display: flex;
-        gap: 15px;
-    }
+    padding: 10px 0;
 
-    .control {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        height: 80px;
-        width: 80px;
-
-        input {
-            height: 100%;
-            width: 100%;
-        }
-    }
 }
 
 main {
-    /* display: flex; */
-    /* flex: 1; */
+    display: flex;
+    flex: 1;
     text-align: center;
-    /* justify-content: center; */
-    background-color: blueviolet;
+    justify-content: center;
+    background-color: rgb(2, 46, 82);
+    align-items: center;
+
+    gap: 25px;
+}
+
+#controls {
+    width: 230px;
+    border: 5px solid #ff0000;
+    padding: 20px;
+    background-color: #ff0000;
+    border-radius: 15px;
+    box-shadow: -7px 7px 10px 5px black;
+
+    .control {
+        display: flex;
+        margin: 20px 0;
+        color: #ffffff;
+        font-family: 'Allan';
+        font-size: large;
+    }
+
+    input {
+        width: 4em;
+        margin-left: auto;
+        text-align: right;
+    }
 }
 
 .table {
     display: flex;
-    flex:1 0 auto;
+    flex: 0 0 auto;
     flex-wrap: wrap;
-    background-color: aqua;
+
+}
+
+#canva {
+    height: 700px;
+    width: 700px;
+
+}
+
+#canvaBorder {
+    border: 25px solid #ff0000;
+    border-radius: 15px;
+
+    box-shadow: -7px 7px 10px 5px black;
 }
 
 .grid {
-    height: calc(100%/16);
-    width: calc(100%/16);
 
     padding: 0;
     margin: 0;
-    /* border: 2px black solid; */
 
-    background-color: red;
 }
 
-.grid:hover {
-    background-color: black;
+.transition {
+    transition: background-color var(--duration);
 }
